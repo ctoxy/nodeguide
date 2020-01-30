@@ -1,6 +1,6 @@
 
 const Product = require('../models/product');
-
+/* permet d'avoir le rendu de la page index */
 exports.getIndex = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render('shop/index', {
@@ -10,7 +10,9 @@ exports.getIndex = (req, res, next) => {
     });
   });    
 };
-exports.getProduct = (req, res, next) => {
+
+/* permet d'avoir le detail de tous les produit sur la page product de shop */
+exports.getProducts = (req, res, next) => {
     Product.fetchAll((products) => {
       res.render('shop/product-list', {
         prods: products,
@@ -18,6 +20,12 @@ exports.getProduct = (req, res, next) => {
         path: '/products',
       });
     });    
+};
+/* permet d'avoir le detail d'un produit */
+exports.getProduct = (req, res, next) => {
+  const prodId = req.params.productId;
+  console.log(prodId);
+  res.redirect('/');  
 };
 
 exports.getCart = (req, res, next) => {
