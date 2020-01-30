@@ -24,7 +24,10 @@ exports.getProducts = (req, res, next) => {
 /* permet d'avoir le detail d'un produit */
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
-  console.log(prodId);
+  Product.findById(prodId, product => {
+    console.log(product);
+    
+  });
   res.redirect('/');  
 };
 
