@@ -12,6 +12,8 @@ router.get('/', shopController.getIndex );
 router.get('/products', shopController.getProduct );
 /* page listant tout la cart cart.ejs*/
 router.get('/cart', shopController.getCart );
+/* page listant tout les orders orders.ejs*/
+router.get('/orders', shopController.getOrders );
 /* page du checkout checkout.ejs*/
 router.get('/checkout', shopController.getCheckout );
 
